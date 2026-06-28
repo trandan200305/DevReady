@@ -1,11 +1,19 @@
 # Kiến trúc hệ thống (Architecture)
 
-Tài liệu này mô tả kiến trúc tổng thể của ứng dụng PC Insight.
+## 1. Kiến trúc MVVM (Model - View - ViewModel)
+PC Insight sử dụng kiến trúc chuẩn của WPF để tách biệt hoàn toàn giao diện và logic xử lý.
 
-## 1. Mô hình MVVM
-- **Model**: Định nghĩa dữ liệu...
-- **View**: Giao diện WPF...
-- **ViewModel**: Logic liên kết...
+- **Views (`/Views`)**: Chỉ chứa mã XAML. Định nghĩa giao diện, layout, data binding.
+- **ViewModels (`/ViewModels`)**: Xử lý logic, gọi đến Services. Sử dụng `INotifyPropertyChanged` hoặc CommunityToolkit.Mvvm để binding dữ liệu 2 chiều.
+- **Models (`/Models`)**: Chứa các Entity class cho Database (Ví dụ: `HardwareInfo`, `ScanSession`).
 
-## 2. Các thành phần chính (Components)
-(Mô tả các thành phần cấu thành hệ thống...)
+## 2. Tổ chức Module hệ thống
+Dự án được chia làm 7 module chính để dễ dàng bảo trì và mở rộng:
+
+1. **UI Module**: Quản lý giao diện, Navigation, Animations, Themes (Dark/Light).
+2. **Scanner Module**: Gọi các API của Windows (WMI, Registry) để thu thập thông tin.
+3. **Analyzer Module**: Đối chiếu dữ liệu quét với cơ sở dữ liệu yêu cầu hệ thống.
+4. **AI Module**: Tích hợp SDK của OpenAI/Gemini, cấu hình Prompt, xử lý Rate Limit và phân tích phản hồi.
+5. **Database Module**: Chứa SQLite DbContext, Repository Pattern để truy xuất dữ liệu lịch sử.
+6. **Report Module**: Sử dụng các thư viện như iTextSharp/QuestPDF để xuất PDF, EPPlus để xuất Excel.
+7. **Update Module**: (Về sau) Quản lý việc tự động tải và cài đặt Runtime còn thiếu.
