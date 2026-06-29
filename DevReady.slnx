@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="DevReady.Test/DevReady.Test.csproj" Id="f071a26d-f3b3-4c67-b658-9716faf84904" />
   <Project Path="src\DevReady.Core\DevReady.Core.csproj" />
   <Project Path="src\DevReady.UI\DevReady.UI.csproj" />
 </Solution>
