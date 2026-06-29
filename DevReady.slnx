@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="DevReady.csproj" />
+  <Project Path="src\DevReady.Core\DevReady.Core.csproj" />
+  <Project Path="src\DevReady.UI\DevReady.UI.csproj" />
 </Solution>

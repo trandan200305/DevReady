@@ -1,7 +1,7 @@
 # Kiến trúc hệ thống (Architecture)
 
 ## 1. Kiến trúc MVVM (Model - View - ViewModel)
-PC Insight sử dụng kiến trúc chuẩn của WPF để tách biệt hoàn toàn giao diện và logic xử lý.
+DevReady sử dụng kiến trúc chuẩn của WPF để tách biệt hoàn toàn giao diện và logic xử lý.
 
 - **Views (`/Views`)**: Chỉ chứa mã XAML. Định nghĩa giao diện, layout, data binding.
 - **ViewModels (`/ViewModels`)**: Xử lý logic, gọi đến Services. Sử dụng `INotifyPropertyChanged` hoặc CommunityToolkit.Mvvm để binding dữ liệu 2 chiều.

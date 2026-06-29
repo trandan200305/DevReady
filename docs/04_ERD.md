@@ -1,6 +1,6 @@
 # Sơ đồ thực thể liên kết (ERD)
 
-Tài liệu này mô tả sơ đồ thực thể liên kết (ERD) của cơ sở dữ liệu SQLite trong ứng dụng PC Insight, dựa trên 10 luồng hoạt động cốt lõi.
+Tài liệu này mô tả sơ đồ thực thể liên kết (ERD) của cơ sở dữ liệu SQLite trong ứng dụng DevReady, dựa trên 10 luồng hoạt động cốt lõi.
 
 ## 1. Thiết kế tổng thể
 
@@ -84,7 +84,7 @@ erDiagram
 
 ## 3. Giải thích mối quan hệ (Relationships)
 
-Cơ sở dữ liệu của PC Insight được thiết kế xoay quanh mô hình **One-to-Many (1:N)** lấy `SCAN_SESSION` làm gốc:
+Cơ sở dữ liệu của DevReady được thiết kế xoay quanh mô hình **One-to-Many (1:N)** lấy `SCAN_SESSION` làm gốc:
 - Mỗi lần người dùng nhấn nút "Quét", hệ thống tạo ra một bản ghi `SCAN_SESSION` đại diện cho phiên làm việc đó.
 - Các module quét (Hardware, Software, Runtime...) sẽ thu thập dữ liệu và insert vào các bảng tương ứng (`HARDWARE_INFO`, `SOFTWARE_INFO`...) với khóa ngoại `ScanId` trỏ về bản ghi `SCAN_SESSION`.
 - Module AI Advisor sau khi nhận kết quả thô sẽ sinh ra các lời khuyên và lưu vào `AI_RECOMMENDATION`, gắn liền với ID của lần quét đó.

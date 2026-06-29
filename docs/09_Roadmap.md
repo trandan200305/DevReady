@@ -1,6 +1,6 @@
 # Lộ trình phát triển (Roadmap)
 
-Dự án PC Insight được chia thành 3 giai đoạn lớn, phát triển tuần tự từ phân tích tĩnh đến can thiệp động vào hệ thống.
+Dự án DevReady được chia thành 3 giai đoạn lớn, phát triển tuần tự từ phân tích tĩnh đến can thiệp động vào hệ thống.
 
 ## Giai đoạn 1: Lõi phân tích (Core Analysis) - Hiện tại
 - **Phiên bản 1.0 - Hardware Scanner**: Xây dựng UI cơ bản, quét thành công toàn bộ CPU, RAM, GPU, Disk.

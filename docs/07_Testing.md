@@ -3,7 +3,7 @@
 Dự án sử dụng **xUnit** hoặc **NUnit** kết hợp với **Moq** để đảm bảo chất lượng phần mềm.
 
 ## 1. Chiến lược Kiểm thử (Testing Strategy)
-Do PC Insight tương tác sâu với hệ điều hành và phần cứng, việc test cần được cô lập để có thể chạy trên bất kỳ máy nào (dù máy đó cấu hình thấp hay cao).
+Do DevReady tương tác sâu với hệ điều hành và phần cứng, việc test cần được cô lập để có thể chạy trên bất kỳ máy nào (dù máy đó cấu hình thấp hay cao).
 
 - **Unit Testing**: Dành cho các logic thuật toán (ví dụ: Thuật toán chấm điểm tương thích).
 - **Mocking**: Giả lập các Windows API (WMI, Registry) và API của OpenAI để không bị phụ thuộc vào môi trường thực tế khi chạy test.

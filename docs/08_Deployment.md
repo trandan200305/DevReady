@@ -1,6 +1,6 @@
 # Triển khai (Deployment)
 
-Tài liệu này hướng dẫn cách đóng gói và xuất bản ứng dụng PC Insight cho người dùng cuối.
+Tài liệu này hướng dẫn cách đóng gói và xuất bản ứng dụng DevReady cho người dùng cuối.
 
 ## 1. Mục tiêu Đóng gói
 - Ứng dụng phải chạy được độc lập (Self-contained) hoặc đảm bảo máy khách có cài sẵn .NET 8 Desktop Runtime.

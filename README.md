@@ -1,9 +1,9 @@
-# PC Insight
+# DevReady
 
 ## 📖 Tổng quan dự án (Project Overview)
-**PC Insight** là một ứng dụng Desktop dành cho hệ điều hành Windows, được phát triển bằng ngôn ngữ C# và nền tảng WPF (Windows Presentation Foundation). Ứng dụng cung cấp giải pháp phân tích toàn diện về phần cứng, phần mềm và đặc biệt là môi trường phát triển (Development Environment) trên máy tính của người dùng.
+**DevReady** là một ứng dụng Desktop dành cho hệ điều hành Windows, được phát triển bằng ngôn ngữ C# và nền tảng WPF (Windows Presentation Foundation). Ứng dụng cung cấp giải pháp phân tích toàn diện về phần cứng, phần mềm và đặc biệt là môi trường phát triển (Development Environment) trên máy tính của người dùng.
 
-Khác với các công cụ kiểm tra thông tin hệ thống truyền thống (chỉ hiển thị thông số khô khan), PC Insight tiến xa hơn bằng cách:
+Khác với các công cụ kiểm tra thông tin hệ thống truyền thống (chỉ hiển thị thông số khô khan), DevReady tiến xa hơn bằng cách:
 - Quét và kiểm tra sự đáp ứng yêu cầu cấu hình của các ứng dụng, phần mềm, game hay công cụ lập trình.
 - Phát hiện các thư viện runtime, SDK, hoặc các dependency phần mềm đang bị thiếu.
 - **Tích hợp Trí tuệ Nhân tạo (AI)** để giải thích các thông số một cách dễ hiểu, đồng thời đưa ra những lời khuyên nâng cấp, khắc phục lỗi tối ưu nhất bằng ngôn ngữ tự nhiên.

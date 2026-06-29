@@ -1,8 +1,8 @@
 # Tổng quan dự án (Project Overview)
 
 ## 1. Giới thiệu chung
-**PC Insight** là một ứng dụng Desktop thông minh dành cho hệ điều hành Windows, được xây dựng trên nền tảng .NET 8 và WPF (Windows Presentation Foundation). 
-Mục tiêu cốt lõi của PC Insight không chỉ là liệt kê thông số phần cứng như các phần mềm truyền thống (CPU-Z, dxdiag), mà là **"hiểu"** máy tính của bạn thông qua sức mạnh của AI, từ đó đưa ra đánh giá tương thích với các môi trường lập trình, game và phần mềm nặng.
+**DevReady** là một ứng dụng Desktop thông minh dành cho hệ điều hành Windows, được xây dựng trên nền tảng .NET 8 và WPF (Windows Presentation Foundation). 
+Mục tiêu cốt lõi của DevReady không chỉ là liệt kê thông số phần cứng như các phần mềm truyền thống (CPU-Z, dxdiag), mà là **"hiểu"** máy tính của bạn thông qua sức mạnh của AI, từ đó đưa ra đánh giá tương thích với các môi trường lập trình, game và phần mềm nặng.
 
 ## 2. Vấn đề giải quyết
 - Người dùng không rành về kỹ thuật khó hiểu được các thông số phần cứng phức tạp.

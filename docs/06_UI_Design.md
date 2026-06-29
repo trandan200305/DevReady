@@ -1,6 +1,6 @@
 # Thiết kế Giao diện (UI Design)
 
-PC Insight hướng đến giao diện hiện đại, sạch sẽ và công nghệ (tech-oriented), lấy cảm hứng từ các Dashboard chuyên nghiệp.
+DevReady hướng đến giao diện hiện đại, sạch sẽ và công nghệ (tech-oriented), lấy cảm hứng từ các Dashboard chuyên nghiệp.
 
 ## 1. Hướng dẫn thiết kế (Design Guidelines)
 - **Theme chủ đạo**: Dark Mode (chế độ tối) để giảm mỏi mắt cho lập trình viên/game thủ.

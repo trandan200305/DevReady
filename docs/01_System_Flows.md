@@ -1,6 +1,6 @@
 # Luồng hệ thống (System Flows)
 
-Tài liệu này mô tả chi tiết các luồng hoạt động chính của hệ thống PC Insight.
+Tài liệu này mô tả chi tiết các luồng hoạt động chính của hệ thống DevReady.
 
 ## 1. Luồng hoạt động tổng thể (Main Flow)
 
@@ -21,7 +21,7 @@ Hệ thống đọc các file cấu hình của project để tìm ra các Depen
 ```mermaid
 sequenceDiagram
     participant User as Người dùng
-    participant App as PC Insight
+    participant App as DevReady
     participant File as Project Files (.csproj, package.json)
     
     User->>App: Chọn thư mục dự án

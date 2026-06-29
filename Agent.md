@@ -1,4 +1,4 @@
-# PC Insight
+# DevReady
 
 # TÀI LIỆU TỔNG QUAN DỰ ÁN
 
@@ -8,11 +8,11 @@ Phiên bản: 1.0
 
 ## 1. Giới thiệu dự án
 
-**PC Insight** là một ứng dụng Desktop được phát triển bằng C# và WPF, giúp người dùng phân tích toàn diện máy tính của mình.
+**DevReady** là một ứng dụng Desktop được phát triển bằng C# và WPF, giúp người dùng phân tích toàn diện máy tính của mình.
 
 Ứng dụng có khả năng quét phần cứng, phần mềm, môi trường chạy (Runtime), môi trường lập trình và đánh giá khả năng tương thích với các ứng dụng hoặc game.
 
-Không chỉ hiển thị thông tin cấu hình, PC Insight còn sử dụng AI để phân tích kết quả và đưa ra những khuyến nghị giúp người dùng tối ưu hệ thống.
+Không chỉ hiển thị thông tin cấu hình, DevReady còn sử dụng AI để phân tích kết quả và đưa ra những khuyến nghị giúp người dùng tối ưu hệ thống.
 
 ---
 
@@ -60,7 +60,7 @@ Dự án hướng đến các nhóm người dùng:
 Hệ thống được chia thành các Module độc lập.
 
 ```text
-PC Insight
+DevReady
 │
 ├── UI Module
 ├── Scanner Module
@@ -125,7 +125,7 @@ Người dùng ➔ Nhấn nút "Quét" ➔ Quét phần cứng ➔ Quét phần 
 
 ## 8. Bốn luồng cốt lõi
 
-Phiên bản đầu tiên của PC Insight chỉ tập trung vào bốn luồng quan trọng nhất:
+Phiên bản đầu tiên của DevReady chỉ tập trung vào bốn luồng quan trọng nhất:
 
 **Hardware Scan ➔ Software Scan ➔ Runtime Scan ➔ Compatibility Analysis**
 
@@ -150,7 +150,7 @@ Bốn luồng này là nền tảng của toàn bộ hệ thống.
 
 ## 10. Mục tiêu cuối cùng
 
-PC Insight hướng đến trở thành một công cụ giúp người dùng:
+DevReady hướng đến trở thành một công cụ giúp người dùng:
 
 - Hiểu rõ cấu hình máy tính.
 - Biết máy còn thiếu thành phần nào.
@@ -158,3 +158,146 @@ PC Insight hướng đến trở thành một công cụ giúp người dùng:
 - Phân tích môi trường lập trình.
 - Đưa ra khuyến nghị thông minh bằng AI.
 - Hỗ trợ tối ưu và nâng cấp hệ thống.
+
+---
+
+## 11. Cấu trúc thư mục chi tiết
+
+```text
+DevReady/                                # Thư mục gốc Solution
+│
+├── 📄 README.md                        # Giới thiệu dự án
+├── 📄 AGENTS.md                        # AI Context
+├── 📄 CHANGELOG.md                     # Lịch sử cập nhật
+├── 📄 LICENSE                          # Giấy phép
+├── 📄 .gitignore
+│
+├── 📁 docs/                            # Tài liệu đặc tả dự án
+│   ├── 00_Tong_Quan_Du_An.md
+│   ├── 01_System_Flow.md
+│   ├── 02_UseCase.md
+│   ├── 03_Architecture.md
+│   ├── 04_ERD.md
+│   ├── 05_Database.md
+│   ├── 06_UI_UX.md
+│   └── ...
+│
+├── 📁 assets/                          # Tài nguyên đồ họa, hình ảnh truyền thông
+│   ├── images/
+│   └── icons/
+│
+├── 📁 release/                         # Nơi chứa file đóng gói sau khi xuất bản
+│   ├── installer/                      # Bộ cài đặt (.msi / .exe)
+│   └── portable/                       # Bản chạy ngay dạng zip
+│
+├── 📁 tests/                           # Phân hệ Kiểm thử độc lập
+│   └── 📁 DevReady.Tests/              # Project Unit Test (dùng xUnit/NUnit + Moq)
+│       ├── 📁 Services/                # Test logic cào, thuật toán so sánh cấu hình
+│       └── 📁 ViewModels/              # Test logic điều hướng, dữ liệu UI
+│
+└── 📁 src/                             # MÃ NGUỒN CHÍNH (Gồm 2 Project con)
+    │
+    ├── 📁 DevReady.Core/               # PROJECT 1: CLASS LIBRARY (Logic & Data)
+    │   │
+    │   ├── 📁 Models/                   # Thực thể dữ liệu & Mapping Database
+    │   │   ├── 📁 Hardware/
+    │   │   │   ├── 📄 CpuInfo.cs
+    │   │   │   ├── 📄 RamInfo.cs
+    │   │   │   ├── 📄 GpuInfo.cs
+    │   │   │   ├── 📄 DiskInfo.cs
+    │   │   │   ├── 📄 MotherboardInfo.cs
+    │   │   │   ├── 📄 BiosInfo.cs
+    │   │   │   ├── 📄 OsInfo.cs
+    │   │   │   ├── 📄 DisplayInfo.cs
+    │   │   │   ├── 📄 NetworkInfo.cs
+    │   │   │   └── 📄 HardwareInfo.cs
+    │   │   ├── 📁 Software/
+    │   │   │   ├── 📄 InstalledSoftware.cs
+    │   │   │   ├── 📄 RuntimeInfo.cs
+    │   │   │   └── 📄 SoftwareInfo.cs
+    │   │   ├── 📁 Analysis/
+    │   │   │   ├── 📄 AppRequirement.cs
+    │   │   │   ├── 📄 CompatibilityResult.cs
+    │   │   │   ├── 📄 AiRecommendation.cs
+    │   │   │   └── 📄 ScanSession.cs
+    │   │   └── 📁 Report/
+    │   │       └── 📄 ReportInfo.cs
+    │   │
+    │   ├── 📁 Interfaces/               # Định nghĩa khung giao tiếp (Dùng cho DI/Mock test)
+    │   │   ├── 📄 IScanner.cs
+    │   │   ├── 📄 IAIService.cs
+    │   │   ├── 📄 IRepository.cs
+    │   │   └── 📄 ICompatibilityService.cs
+    │   │
+    │   ├── 📁 Data/                     # Quản lý tầng Cơ sở dữ liệu SQLite
+    │   │   ├── 📄 AppDbContext.cs      # File cấu hình Entity Framework Core
+    │   │   └── 📄 Repository.cs        # Lớp thực thi đọc/ghi DB
+    │   │
+    │   ├── 📁 Scanners/                 # Các module quét cấu hình trực tiếp
+    │   │   ├── 📁 Hardware/
+    │   │   │   ├── 📄 CpuScanner.cs
+    │   │   │   ├── 📄 RamScanner.cs
+    │   │   │   ├── 📄 GpuScanner.cs
+    │   │   │   ├── 📄 DiskScanner.cs
+    │   │   │   ├── 📄 MotherboardScanner.cs
+    │   │   │   ├── 📄 BiosScanner.cs
+    │   │   │   └── 📄 OsScanner.cs
+    │   │   ├── 📁 Runtime/
+    │   │   │   ├── 📄 DotNetRuntimeScanner.cs
+    │   │   │   ├── 📄 DotNetSdkScanner.cs
+    │   │   │   ├── 📄 JavaScanner.cs
+    │   │   │   ├── 📄 PythonScanner.cs
+    │   │   │   ├── 📄 NodeJsScanner.cs
+    │   │   │   └── 📄 VcRedistScanner.cs
+    │   │   ├── 📁 Software/
+    │   │   │   └── 📄 InstalledSoftwareScanner.cs
+    │   │   └── 📁 Common/
+    │   │       ├── 📄 RegistryScanner.cs
+    │   │       ├── 📄 WmiHelper.cs
+    │   │       └── 📄 PowerShellHelper.cs
+    │   │
+    │   ├── 📁 Services/                 # Nơi xử lý thuật toán và giao tiếp API
+    │   │   ├── 📁 Hardware/
+    │   │   ├── 📁 Software/
+    │   │   ├── 📁 Runtime/
+    │   │   ├── 📁 AI/                  # Đóng gói JSON gọi OpenAI/Gemini API
+    │   │   │   ├── 📄 AIService.cs
+    │   │   │   └── 📄 PromptBuilder.cs
+    │   │   └── 📁 Analyzer/            # Bộ lõi tính % tương thích (Compatibility Engine)
+    │   │       └── 📄 CompatibilityService.cs
+    │   │
+    │   ├── 📁 Common/                   # Các hằng số và tiện ích chung
+    │   │
+    │   ├── 📁 Enums/                    # Danh sách Enum
+    │   │
+    │   └── 📁 Helpers/                  # Tiện ích mở rộng (Đọc JSON, log file...)
+    │
+    └── 📁 DevReady.UI/                 # PROJECT 2: WPF APP (Giao diện người dùng)
+        │                                # (Project này sẽ Reference sang DevReady.Core)
+        ├── 📄 App.xaml
+        ├── 📄 App.xaml.cs              # Nơi cấu hình khởi tạo Dependency Injection
+        │
+        ├── 📁 Views/                    # Chỉ chứa file giao diện XAML thuần túy
+        │   ├── 📄 MainWindow.xaml      # Cửa sổ chính chứa thanh Menu/Navigation
+        │   ├── 📄 DashboardView.xaml   # Trang chủ (Có nút QUÉT bự)
+        │   ├── 📄 HardwareView.xaml    # Trang hiển thị CPU, RAM chi tiết
+        │   ├── 📄 RuntimeView.xaml     # Trang hiển thị môi trường thiếu/đủ
+        │   └── 📄 CompatibilityView.xaml # Trang chọn App cần tải để check độ tương thích
+        │
+        ├── 📁 ViewModels/               # Bộ não điều khiển UI, kết nối View với Core Services
+        │   ├── 📄 MainViewModel.cs
+        │   ├── 📄 DashboardViewModel.cs
+        │   ├── 📄 HardwareViewModel.cs
+        │   ├── 📄 RuntimeViewModel.cs
+        │   └── 📄 CompatibilityViewModel.cs
+        │
+        ├── 📁 Resources/                # Quản lý tài nguyên đồ họa & Thẩm mỹ UI
+        │   ├── 📁 Styles/               # Style cho Button, TextBox, ProgressBar...
+        │   ├── 📁 Themes/               # File quản lý cấu hình DarkMode / LightMode
+        │   ├── 📁 Icons/                # Các icon SVG hoặc hình ảnh nút bấm
+        │   └── 📁 Fonts/                # Font chữ hiện đại (Segoe UI Variable, Inter)
+        │
+        ├── 📁 Commands/                 # Các RelayCommand / AsyncRelayCommand cho nút bấm
+        ├── 📁 Converters/               # Bộ chuyển đổi dữ liệu hiển thị (VD: BoolToVisibilityConverter)
+        └── 📁 Config/                   # Lưu appsettings.json chứa API Key AI bảo mật
+```
