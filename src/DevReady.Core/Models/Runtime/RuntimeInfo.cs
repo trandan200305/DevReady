@@ -1,4 +1,4 @@
-namespace DevReady.Core.Models.Software
+namespace DevReady.Core.Models.Runtime
 {
     public class RuntimeInfo
     {

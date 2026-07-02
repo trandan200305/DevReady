@@ -71,6 +71,15 @@ DevReady
 └── Update Module
 ```
 
+### 5.1. Nguyên tắc Separation of Concerns (SoC)
+
+Để đảm bảo hệ thống dễ bảo trì và mở rộng, dự án tuân thủ nghiêm ngặt nguyên tắc phân tách trách nhiệm (Separation of Concerns):
+
+- **Scanner**: Thu thập dữ liệu thô từ hệ thống.
+- **Service**: Điều phối và xử lý logic nghiệp vụ.
+- **Model**: Chứa cấu trúc dữ liệu.
+- **Compatibility Engine** (sẽ phát triển sau): Phân tích và đánh giá sự tương thích của hệ thống.
+
 ---
 
 ## 6. Luồng hoạt động tổng thể

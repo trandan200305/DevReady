@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Threading.Tasks;
 using DevReady.Core.Scanners.Hardware;
+using DevReady.Core.Scanners.Software;
+using DevReady.Core.Services.Software;
 
 namespace DevReady.Test
 {
@@ -50,7 +52,13 @@ namespace DevReady.Test
                 var networks = await new NetworkScanner().ScanAsync();
                 PrintInfo(networks);
 
-                Console.WriteLine("\nQuét phần cứng hoàn tất!");
+                Console.WriteLine("\n===== INSTALLED SOFTWARE INFO =====");
+                var softwareScanner = new InstalledSoftwareScanner();
+                var softwareService = new SoftwareService(softwareScanner);
+                var softwareInfo = await softwareService.GetSoftwareInfoAsync();
+                PrintInfo(softwareInfo.InstalledSoftwares);
+
+                Console.WriteLine("\nQuét phần cứng và phần mềm hoàn tất!");
             }
             catch (Exception ex)
             {
